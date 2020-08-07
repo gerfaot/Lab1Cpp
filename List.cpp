@@ -46,10 +46,9 @@ void List::printSize() const
 void List::deleteElement(int deleteData)
 {
     node * temp = head;
-
+    node * prev;
     if(head -> data == deleteData)
     {
-        temp = head;
         std::cout << "data " << deleteData << " deleted" << '\n' << std::endl;
         head = head -> next;
         size = size - 1;
@@ -62,35 +61,36 @@ void List::deleteElement(int deleteData)
         if (temp -> data == deleteData)
         {
             node * killP;
-            killP = temp;
-            temp = temp -> next;
-            delete killP;
-            std::cout << "data " << deleteData << " deleted" << '\n' << std::endl;
+            killP = temp;                                                                                  //
+            prev -> next = temp -> next;                                                                  //
+            delete killP;                                                                                //break
+            std::cout << "data " << deleteData << " deleted" << '\n' << std::endl;                      //continue
             size = size - 1;
         }
         else
+        {
+            prev = temp;
             temp = temp -> next;
-
+        }
     }
 }
 
-void List::getLast()
+List::node * List::getLast()
 {
     node * temp = head;
     while (temp != nullptr){
         if(temp -> next == nullptr)
         {
             std::cout << "Last element - " << temp -> data << '\n' << std::endl;
-            return;
+            break;
         }
         else temp = temp -> next;
     }
-
 }
 
 void List::getNext()
 {
-    std::cout << 
+
 }
 
 void List::getPrevious()
@@ -112,12 +112,34 @@ void List::retrieve()
 
 }
 
-void List::position()
+void List::position(int element)
 {
+    int count = 0;
+    node * temp = head;
+    while(temp != nullptr)
+    {
+
+        if(temp -> data == element) {
+
+            std::cout << "Position of element - " << count << '\n' << std::endl;
+            temp = temp ->next;
+        }
+        else
+        {
+            count = count + 1;
+            temp = temp -> next;
+            std::cout << "No such element" << '\n'<< std::endl;
+        }
+
+    }
 
 }
-int List::getFirst()
+List::node * List::getFirst()
 {
     std::cout << "First element - " << head -> data << '\n' << std::endl;
-    return head -> data;
+    return head;
+}
+   List::node * List::getPosledniy(node * head)
+{
+
 }

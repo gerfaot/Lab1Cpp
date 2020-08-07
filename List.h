@@ -3,23 +3,6 @@
 
 
 class List{
-
-public:
-    List();
-
-    void addElement(int data);
-    void pasteElement();
-    void printList();
-    void printSize() const;
-    void getLast();
-    int getFirst();
-    void getNext();
-    void getPrevious();
-    void retrieve();
-    void position();
-    void deleteElement(int deleteData);
-    void makeNull();
-
 private:
 
     struct node
@@ -35,6 +18,26 @@ private:
     };
     node * head;
     int size;
+    node * getPosledniy(node * head);
+
+public:
+    List();
+
+    void addElement(int data);
+    void pasteElement();
+    void printList();
+    void printSize() const;
+
+    node * getLast();
+    node * getFirst(); //return head
+    void getNext(); //address
+    void getPrevious();
+    void retrieve();
+    void position(int element);
+    void deleteElement(int deleteData);
+    void makeNull();
+
+
 };
 
 

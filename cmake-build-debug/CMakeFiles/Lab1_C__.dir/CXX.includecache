@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/leonid/CLionProjects/Lab1_C++/List.cpp
-iostream
--
-List.h
 /home/leonid/CLionProjects/Lab1_C++/List.h
 
+/home/leonid/CLionProjects/Lab1_C++/main.cpp
+List.h
 /home/leonid/CLionProjects/Lab1_C++/List.h
 
